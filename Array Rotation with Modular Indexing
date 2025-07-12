@@ -1,0 +1,28 @@
+import java.util.Scanner;
+class Solution{
+    static void rotate(int[]arr, int k){
+        k = k%arr.length;
+        int []rotate=new int[arr.length];
+        for(int i=0;i<arr.length;i++){
+            rotate[i]=arr[(i+k)%arr.length];
+        }
+        for(int i:rotate){
+            System.out.print(i+" ");
+        }
+        System.out.println();
+    }
+    public static void main(String[] args){
+        Scanner o=new Scanner(System.in);
+        
+        int n=o.nextInt();
+        int kth=o.nextInt();
+        int[]arrr=new int[n];
+        for(int i=0;i<n;i++){
+            arrr[i]=o.nextInt();
+        }
+        rotate(arrr, kth);
+        o.close();
+        
+    }
+    
+}
